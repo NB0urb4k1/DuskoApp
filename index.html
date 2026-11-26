@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0b0e" />
+    <meta
+      name="description"
+      content="Dusko Gym — registra tu progreso en el gimnasio y descubre cuándo subir el peso o cambiar de ejercicio."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dusko Gym</title>
+    <script>
+      try {
+        var raw = localStorage.getItem('dusko:gym');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (
+            parsed &&
+            parsed.state &&
+            parsed.state.settings &&
+            parsed.state.settings.theme === 'light'
+          ) {
+            document.documentElement.classList.add('light');
+          }
+        }
+      } catch (error) {
+        /* Sin datos guardados todavía */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
